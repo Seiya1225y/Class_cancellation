@@ -1,0 +1,48 @@
+.box1 {
+    padding: 0.5em 1em;
+    margin: 5em 0;
+    font-weight: normal;
+    border: solid 3px #000000;
+    border-width:thin;
+}
+
+.dropdown-toggle{
+    border-color: #000000;
+}
+
+.form-control{
+    border-color: #000000;
+}
+
+div {
+    margin: 6px;
+}
+
+button{
+    margin: 6px;
+}
+
+.main {
+    background-color: #ffffff;
+    width: 500px;
+    float: right;
+}
+
+.main2 {
+    color: #339933;
+    background-color: #99cc33;
+    width: 500px;
+    float: left;
+}
+
+.abc{
+    border: 1px solid #aaa;
+    width: 150px;
+    height: 50px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
