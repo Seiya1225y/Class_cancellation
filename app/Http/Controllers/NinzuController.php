@@ -17,6 +17,14 @@ class NinzuController extends Controller
 
         //$query = Ninzu::query();
 
+        $query =frameworks::query();
+
+        $query->join('kamoku','kamoku.kamoku_cd','=','kamokutantou.kamoku_cd')
+            ->join('kyoushokuin','kamokutantou.kyoushokuin_no','=','kyoushokuin.kyoushokuin_no')
+            ->join('jikanwarikouji','jikanwarikouji.kamoku_tantou_id','=','kamokutantou.kamoku_tantou_id')
+            ->where("kamokutantou.rishuu_nendo","=","2018")
+            ->distinct();
+
         /**$query->join('gakuseijouhou','kojinjouhou.kojin_id','=','gakuseijouhou.kojin_id')
             ->join('rishuujikanwari','gakuseijouhou.student_no','=','rishuujikanwari.student_no')
             ->join('jikanwarikouji','rishuujikanwari.jikanwari_no','=','jikanwarikouji.jikanwari_no')
@@ -31,7 +39,7 @@ class NinzuController extends Controller
             //->where('jikanwarikouji.youbi_cd',$youbi)
             ->where("rishuukamoku.rishunendo","=","2017")
             ->groupBy('gakuseijouhou.student_no');
-
+         * */
 
         if ($request->has('kamokumei')){
             $query->where('kamoku.kamoku_cd',$kamokumei);
@@ -45,9 +53,9 @@ class NinzuController extends Controller
             $query->where('kyoushokuin.kanjimei',$kanjimei);
         }
 
-        $data = $query->count('gakuseijouhou.student_no');
-         * */
-        dd($kamokumei,$kanjisei,$kanjimei);
+        $data = $query->count('kamoku.kamoku_meishou');
+
+        //$data = $query->paginate(20);
 
         return view('sample.show',[
             'data' => $data
