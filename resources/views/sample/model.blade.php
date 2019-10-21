@@ -142,7 +142,7 @@
                                     <form method="get" action="{{url('/sample/show')}}" name="a">
                                         {{ csrf_field() }}
                                     <tr>
-                                        <td><input type="hidden" name="kamokumei" value="{{$d->kamoku_cd}}">{{$d->kamoku_meishou}}</td>
+                                        <td><input type="hidden" name="kamokucd" value="{{$d->kamoku_cd}}">{{$d->kamoku_meishou}}</td>
                                         <td><input type="hidden" name="kanjisei" value="{{$d->kanjisei}}">{{$d->kanjisei}}</td>
                                         <td><input type="hidden" name="kanjimei" value="{{$d->kanjimei}}">{{$d->kanjimei}}</td>
                                         <td><input type="submit" value="詳細" class="btn btn-primary btn-sm"></td>
